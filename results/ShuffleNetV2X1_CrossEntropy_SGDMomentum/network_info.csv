@@ -1,0 +1,2 @@
+name,epochs,batch_size,criterion,optimizer
+ShuffleNetV2X1,1,4,CrossEntropyLoss,SGD with momentum
