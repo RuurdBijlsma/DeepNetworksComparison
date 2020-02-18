@@ -8,7 +8,7 @@ batch_size = 4
 
 test_params = [
     {
-        'skip': True,
+        'skip': False,
         'name': {
             'folder': 'AlexNet_CrossEntropy_SGDMomentum',
             'network': 'AlexNet',
@@ -22,7 +22,7 @@ test_params = [
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
-        'skip': True,
+        'skip': False,
         'name': {
             'folder': 'VGG19_CrossEntropy_SGDMomentum',
             'network': 'VGG19',
@@ -36,7 +36,7 @@ test_params = [
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
-        'skip': True,
+        'skip': False,
         'name': {
             'folder': 'DenseNet201_CrossEntropy_SGDMomentum',
             'network': 'DenseNet201',
@@ -50,7 +50,7 @@ test_params = [
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
-        'skip': True,
+        'skip': False,
         'name': {
             'folder': 'GoogleNet_CrossEntropy_SGDMomentum',
             'network': 'GoogleNet',
@@ -64,7 +64,7 @@ test_params = [
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
-        'skip': True,
+        'skip': False,
         'name': {
             'folder': 'ResNet152_CrossEntropy_SGDMomentum',
             'network': 'ResNet152',
@@ -78,7 +78,7 @@ test_params = [
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
-        'skip': False,
+        'skip': True,
         'name': {
             'folder': 'InceptionV3_CrossEntropy_SGDMomentum',
             'network': 'InceptionV3',
@@ -92,7 +92,7 @@ test_params = [
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
-        'skip': False,
+        'skip': True,
         'name': {
             'folder': 'ShuffleNetV2X1_CrossEntropy_SGDMomentum',
             'network': 'ShuffleNetV2X1',
@@ -106,7 +106,7 @@ test_params = [
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
-        'skip': False,
+        'skip': True,
         'name': {
             'folder': 'MnasNet1.3_CrossEntropy_SGDMomentum',
             'network': 'MnasNet1.3',

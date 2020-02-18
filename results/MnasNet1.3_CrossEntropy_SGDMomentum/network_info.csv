@@ -1,2 +1,2 @@
 name,epochs,batch_size,criterion,optimizer
-MnasNet1.3,1,4,CrossEntropyLoss,SGD with momentum
+MnasNet1.3,10,4,CrossEntropyLoss,SGD with momentum
