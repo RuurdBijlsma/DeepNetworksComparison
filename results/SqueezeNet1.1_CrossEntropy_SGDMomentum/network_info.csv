@@ -1,2 +1,0 @@
-name,epochs,batch_size,criterion,optimizer
-SqueezeNet1.1,1,4,CrossEntropyLoss,SGD with momentum

@@ -1,0 +1,2 @@
+name,epochs,batch_size,criterion,optimizer
+AlexNet,10,4,CrossEntropyLoss,RMSProp wd: 0

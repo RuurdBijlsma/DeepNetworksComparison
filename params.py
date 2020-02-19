@@ -11,6 +11,34 @@ batch_size = 4
 
 test_params = [
     {
+        'skip': False,
+        'name': {
+            'folder': 'AlexNet_CrossEntropy_SGDMomentum_32batch',
+            'network': 'AlexNet',
+            'criterion': 'CrossEntropyLoss',
+            'optimizer': 'SGDMomentum',
+        },
+        'epochs': epochs,
+        'batch_size': 32,
+        'network': lambda: models.alexnet(),
+        'criterion': lambda: nn.CrossEntropyLoss(),
+        'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
+    },
+    {
+        'skip': False,
+        'name': {
+            'folder': 'AlexNet_CrossEntropy_SGDMomentum_128batch',
+            'network': 'AlexNet',
+            'criterion': 'CrossEntropyLoss',
+            'optimizer': 'SGDMomentum',
+        },
+        'epochs': epochs,
+        'batch_size': 128,
+        'network': lambda: models.alexnet(),
+        'criterion': lambda: nn.CrossEntropyLoss(),
+        'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
+    },
+    {
         'skip': True,
         'name': {
             'folder': 'AlexNet_CrossEntropy_Adam',
@@ -81,7 +109,7 @@ test_params = [
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
-        'skip': False,
+        'skip': True,
         'name': {
             'folder': 'AlexNet_CrossEntropy_SGDMomentum_SoftPlus',
             'network': 'AlexNet',
@@ -95,7 +123,7 @@ test_params = [
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
-        'skip': False,
+        'skip': True,
         'name': {
             'folder': 'AlexNet_CrossEntropy_SGDMomentum_Sigmoid',
             'network': 'AlexNet',
@@ -123,7 +151,7 @@ test_params = [
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
-        'skip': False,
+        'skip': True,
         'name': {
             'folder': 'VGG19_CrossEntropy_SGDMomentum',
             'network': 'VGG19',
@@ -147,7 +175,7 @@ test_params = [
         'epochs': epochs,
         'batch_size': batch_size,
         'network': lambda: models.inception_v3(),
-        'criterion': lambda: nn.CrossEntropyLoss(),
+        'criterion': lambda: nn.BCEWithLogitsLoss(),
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
@@ -181,48 +209,6 @@ test_params = [
     # {
     #     'skip': False,
     #     'name': {
-    #         'folder': 'MobileNetV2_CrossEntropy_SGDMomentum',
-    #         'network': 'MobileNetV2',
-    #         'criterion': 'CrossEntropyLoss',
-    #         'optimizer': 'SGD with momentum',
-    #     },
-    #     'epochs': epochs,
-    #     'batch_size': batch_size,
-    #     'network': lambda: models.mobilenet_v2(),
-    #     'criterion': lambda: nn.CrossEntropyLoss(),
-    #     'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
-    # },
-    # {
-    #     'skip': False,
-    #     'name': {
-    #         'folder': 'SqueezeNet1.1_CrossEntropy_SGDMomentum',
-    #         'network': 'SqueezeNet1.1',
-    #         'criterion': 'CrossEntropyLoss',
-    #         'optimizer': 'SGD with momentum',
-    #     },
-    #     'epochs': epochs,
-    #     'batch_size': batch_size,
-    #     'network': lambda: models.squeezenet1_1(),
-    #     'criterion': lambda: nn.CrossEntropyLoss(),
-    #     'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
-    # },
-    # {
-    #     'skip': False,
-    #     'name': {
-    #         'folder': 'DenseNet201_CrossEntropy_SGDMomentum',
-    #         'network': 'DenseNet201',
-    #         'criterion': 'CrossEntropyLoss',
-    #         'optimizer': 'SGD with momentum',
-    #     },
-    #     'epochs': epochs,
-    #     'batch_size': batch_size,
-    #     'network': lambda: models.densenet201(),
-    #     'criterion': lambda: nn.CrossEntropyLoss(),
-    #     'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
-    # },
-    # {
-    #     'skip': False,
-    #     'name': {
     #         'folder': 'GoogleNet_CrossEntropy_SGDMomentum',
     #         'network': 'GoogleNet',
     #         'criterion': 'CrossEntropyLoss',
@@ -231,7 +217,7 @@ test_params = [
     #     'epochs': epochs,
     #     'batch_size': batch_size,
     #     'network': lambda: models.googlenet(),
-    #     'criterion': lambda: nn.CrossEntropyLoss(),
+    #     'criterion': lambda: nn.BCEWithLogitsLoss(),
     #     'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     # },
     # {

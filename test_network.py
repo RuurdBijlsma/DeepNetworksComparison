@@ -105,7 +105,7 @@ def load_data(params):
 
 
 def fix_logits_output(output, params):
-    # Removes auxiliary data from GoogleNet and Inception outputs
+    # Removes auxiliary data from GoogleNet and Inception outputs :(
     if params['name']['network'] in ['GoogleNet', 'InceptionV3']:
         output = output.logits
     return output
