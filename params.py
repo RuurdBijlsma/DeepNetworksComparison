@@ -4,6 +4,7 @@ import torch.optim as optim
 from models.sigmoid_alexnet import SigmoidAlexNet
 from models.leaky_alexnet import LeakyAlexNet
 from models.softplus_alexnet import SoftPlusAlexNet
+from models.prelu_alexnet import PReLUAlexNet
 from torch.optim.rmsprop import RMSprop
 
 epochs = 10
@@ -11,7 +12,7 @@ batch_size = 4
 
 test_params = [
     {
-        'skip': False,
+        'skip': True,
         'name': {
             'folder': 'AlexNet_CrossEntropy_SGDMomentum_32batch',
             'network': 'AlexNet',
@@ -25,7 +26,7 @@ test_params = [
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
-        'skip': False,
+        'skip': True,
         'name': {
             'folder': 'AlexNet_CrossEntropy_SGDMomentum_128batch',
             'network': 'AlexNet',
@@ -109,6 +110,20 @@ test_params = [
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {
+        'skip': False,
+        'name': {
+            'folder': 'AlexNet_CrossEntropy_SGDMomentum_PReLU',
+            'network': 'AlexNet',
+            'criterion': 'CrossEntropyLoss',
+            'optimizer': 'SGD with momentum',
+        },
+        'epochs': epochs,
+        'batch_size': batch_size,
+        'network': lambda: PReLUAlexNet(),
+        'criterion': lambda: nn.CrossEntropyLoss(),
+        'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
+    },
+    {
         'skip': True,
         'name': {
             'folder': 'AlexNet_CrossEntropy_SGDMomentum_SoftPlus',
@@ -175,7 +190,7 @@ test_params = [
         'epochs': epochs,
         'batch_size': batch_size,
         'network': lambda: models.inception_v3(),
-        'criterion': lambda: nn.BCEWithLogitsLoss(),
+        'criterion': lambda: nn.CrossEntropyLoss(),
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
     {

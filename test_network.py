@@ -154,9 +154,9 @@ def train_network(data_loader, params):
             loss_value = loss.item()
             losses.append(loss_value)
             running_loss += loss_value
-            if batch_index % 200 == 199:  # print every 200 mini-batches
+            if batch_index % 100 == 99:  # print every 200 mini-batches
                 print('[%d, %5d] loss: %.3f, acc %.3f %%' %
-                      (epoch + 1, batch_index + 1, running_loss / 200, 100 * correct / total))
+                      (epoch + 1, batch_index + 1, running_loss / 100, 100 * correct / total))
                 running_loss = 0.0
 
         epoch_performances.append((statistics.mean(losses), correct / total))
