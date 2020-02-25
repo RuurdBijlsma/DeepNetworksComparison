@@ -221,32 +221,4 @@ test_params = [
         'criterion': lambda: nn.CrossEntropyLoss(),
         'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
     },
-    # {
-    #     'skip': False,
-    #     'name': {
-    #         'folder': 'GoogleNet_CrossEntropy_SGDMomentum',
-    #         'network': 'GoogleNet',
-    #         'criterion': 'CrossEntropyLoss',
-    #         'optimizer': 'SGD with momentum',
-    #     },
-    #     'epochs': epochs,
-    #     'batch_size': batch_size,
-    #     'network': lambda: models.googlenet(),
-    #     'criterion': lambda: nn.BCEWithLogitsLoss(),
-    #     'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
-    # },
-    # {
-    #     'skip': False,
-    #     'name': {
-    #         'folder': 'ResNet152_CrossEntropy_SGDMomentum',
-    #         'network': 'ResNet152',
-    #         'criterion': 'CrossEntropyLoss',
-    #         'optimizer': 'SGD with momentum',
-    #     },
-    #     'epochs': epochs,
-    #     'batch_size': batch_size,
-    #     'network': lambda: models.resnet152(),
-    #     'criterion': lambda: nn.CrossEntropyLoss(),
-    #     'optimizer': lambda parameters: optim.SGD(parameters, lr=0.001, momentum=0.9)
-    # },
 ]
